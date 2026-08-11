@@ -1,5 +1,4 @@
-trigger:
-    - main
+trigger: none
 pool: infra-agent
 steps:
 - task: TerraformInstaller@1
