@@ -1,4 +1,5 @@
-trigger: main
+trigger:
+    - main
 pool: azure-infra
 steps:
 - task: TerraformInstaller@1
