@@ -3,7 +3,7 @@ pool: infra-agent
 steps:
 - task: TerraformInstaller@1
   inputs:
-    terraformVersion: 'latest'
+    terraformVersion: '1.9.0'
 - task: TerraformTask@5
   inputs:
     provider: 'azurerm'
