@@ -1,0 +1,26 @@
+trigger: none
+pool: infra-agent
+steps:
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: '1.9.0'
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\azure_infra'
+    backendServiceArm: 'connection'
+    backendAzureRmOverrideSubscriptionID: '9d8c9a66-6c79-469b-b22a-28d9ed1ed311'
+    backendAzureRmStorageAccountName: 'azureinfra'
+    backendAzureRmContainerName: 'azureinfracontainer'
+    backendAzureRmKey: 'terraform.tfstate'
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)\azure_infra'
+    backendServiceArm: 'connection'
+    backendAzureRmOverrideSubscriptionID: '9d8c9a66-6c79-469b-b22a-28d9ed1ed311'
+    backendAzureRmStorageAccountName: 'azureinfra'
+    backendAzureRmContainerName: 'azureinfracontainer'
+    backendAzureRmKey: 'terraform.tfstate'
